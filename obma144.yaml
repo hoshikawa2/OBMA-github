@@ -22,7 +22,7 @@ spec:
         image: iad.ocir.io/id3kyspkytmr/flexcube/obma144:v1
         command: [ "/bin/sh", "-c"]
         args:
-          [ "sleep 180; cd /; wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/2O1XmamyP1yAVc2KDsBfTIqJmO55JEiT6Pf4U15EIKytfD7AFqjGoibRAd2BtmMu/n/id3kyspkytmr/b/bucket_banco_conceito/o/initializeConfig-obma.sh; sh initializeConfig-obma.sh jdbc:oracle:thin:@132.145.191.118:1521/DB0401_iad15g.subnet04010815.vcn04010815.oraclevcn.com {AES256}7kfaltdnEBjKNqdHFhUn7o10DRIU0IcLOynq1ee8Ib8=; while true; do sleep 30; done;" ]
+          [ "sleep 180; cd /; wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/2O1XmamyP1yAVc2KDsBfTIqJmO55JEiT6Pf4U15EIKytfD7AFqjGoibRAd2BtmMu/n/id3kyspkytmr/b/bucket_banco_conceito/o/initializeConfig-obma.sh; sh initializeConfig-obma.sh jdbc:oracle:thin:@1.1.1.1:1521/DB0401_iad15g.subnet000000005.vcn00000005.oraclevcn.com {AES256}7kfalxxxxxxxxxxxxxxxxxOynq1ee8Ib8=; while true; do sleep 30; done;" ]
         ports:
         - name: port8001
           containerPort: 8001
