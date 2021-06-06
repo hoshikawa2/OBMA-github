@@ -31,8 +31,6 @@ spec:
         ports:
         - name: port8001
           containerPort: 8001
-        - name: port8001
-          containerPort: 8001
         - name: port8002
           containerPort: 8002
         - name: port8003
