@@ -1,10 +1,10 @@
-# Deploying Flexcube in OCI OKE with ORACLE VISUAL BUILDER STUDIO
+# Deploying OBMA in OCI OKE with ORACLE VISUAL BUILDER STUDIO
 
 Observations:
 
 * Layers for Containerization
    * Fusion
-   * Flexcube
+   * OBMA
    * WebLogic Configuration
    * Database Configuration
    * Flexcube Servers
@@ -13,17 +13,17 @@ Observations:
 
     If you already have a Pod/Deployment:
 
-    kubectl delete deployment integrated144-deployment
+    kubectl delete deployment obma144-deployment
    
     ------
   
     Or if you want to create a new Deployment:
  
-    kubectl apply -f integrated144.yaml
+    kubectl apply -f obma144.yaml
     
-    Remember: Change the JDBC parameters inside integrated144.yaml
+    Remember: Change the JDBC parameters inside obma144.yaml
 
-### Building Flexcube Docker Image
+### Building OBMA Docker Image
 
 
     sudo docker run --name integrated144 -h "fcubs.oracle.com" -p 7001-7020:7001-7020 -it "iad.ocir.io/id3kyspkytmr/oraclefmw-infra_with_patch:12.2.1.4.0" /bin/bash
