@@ -1,0 +1,191 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: obma144-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: obma144
+  template:
+    metadata:
+      labels:
+        app: obma144
+    spec:
+      hostname: obma144
+      hostAliases:
+      - ip: "127.0.0.1"
+        hostnames:
+        - "obma.oracle.com"
+      containers:
+      - name: obma144
+        image: iad.ocir.io/id3kyspkytmr/flexcube/obma144:v1
+        command: [ "/bin/sh", "-c"]
+        args:
+          [ "sleep 180; cd /; wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/2O1XmamyP1yAVc2KDsBfTIqJmO55JEiT6Pf4U15EIKytfD7AFqjGoibRAd2BtmMu/n/id3kyspkytmr/b/bucket_banco_conceito/o/initializeConfig-obma.sh; sh initializeConfig-obma.sh jdbc:oracle:thin:@132.145.191.118:1521/DB0401_iad15g.subnet04010815.vcn04010815.oraclevcn.com {AES256}7kfaltdnEBjKNqdHFhUn7o10DRIU0IcLOynq1ee8Ib8=; while true; do sleep 30; done;" ]
+        ports:
+        - name: port8001
+          containerPort: 8001
+        - name: port8001
+          containerPort: 8001
+        - name: port8002
+          containerPort: 8002
+        - name: port8003
+          containerPort: 8003
+        - name: port8004
+          containerPort: 8004
+        - name: port8005
+          containerPort: 8005
+        - name: port8006
+          containerPort: 8006
+        - name: port8007
+          containerPort: 8007
+        - name: port8008
+          containerPort: 8008
+        - name: port8009
+          containerPort: 8009
+        - name: port8010
+          containerPort: 8010
+        - name: port8011
+          containerPort: 8011
+        - name: port8012
+          containerPort: 8012
+        - name: port8013
+          containerPort: 8013
+        - name: port8014
+          containerPort: 8014
+        - name: port8015
+          containerPort: 8015
+        - name: port8016
+          containerPort: 8016
+        - name: port8017
+          containerPort: 8017
+        - name: port8018
+          containerPort: 8018
+        - name: port8019
+          containerPort: 8019
+        - name: port8020
+          containerPort: 8020
+        - name: port8021
+          containerPort: 8021
+        - name: port8022
+          containerPort: 8022
+        - name: port8023
+          containerPort: 8023
+        - name: port8024
+          containerPort: 8024
+        - name: port8025
+          containerPort: 8025
+        - name: port8026
+          containerPort: 8026
+        - name: port8027
+          containerPort: 8027
+        - name: port8028
+          containerPort: 8028
+        - name: port8029
+          containerPort: 8029
+        - name: port8030
+          containerPort: 8030
+        - name: port8031
+          containerPort: 8031
+        - name: port8032
+          containerPort: 8032
+        - name: port8033
+          containerPort: 8033
+        - name: port8034
+          containerPort: 8034
+        - name: port8035
+          containerPort: 8035
+        - name: port8036
+          containerPort: 8036
+        - name: port8037
+          containerPort: 8037
+        - name: port8038
+          containerPort: 8038
+        - name: port8039
+          containerPort: 8039
+        - name: port8040
+          containerPort: 8040
+        - name: port8041
+          containerPort: 8041
+        - name: port8042
+          containerPort: 8042
+        - name: port8043
+          containerPort: 8043
+        - name: port8044
+          containerPort: 8044
+        - name: port8045
+          containerPort: 8045
+        - name: port8046
+          containerPort: 8046
+        - name: port8047
+          containerPort: 8047
+        - name: port8048
+          containerPort: 8048
+        - name: port8049
+          containerPort: 8049
+        - name: port8050
+          containerPort: 8050
+        - name: port5556
+          containerPort: 5556
+        livenessProbe:
+          httpGet:
+            path: /console
+            port: 8001
+          initialDelaySeconds: 3000
+          timeoutSeconds: 30
+          periodSeconds: 300
+          failureThreshold: 3
+        resources:
+          requests:
+            cpu: "5"
+            memory: "40Gi"
+          limits:
+            cpu: "5"
+            memory: "40Gi"
+      restartPolicy: Always
+      imagePullSecrets:
+      # enter the name of the secret you created
+      - name: ocirsecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: obma44-service
+  labels:
+    app: obma144
+spec:
+  selector:
+    app: obma144
+  ports:
+    - port: 8004
+      targetPort: 8004
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: obma144-service-weblogic
+  labels:
+    app: obma144
+spec:
+  selector:
+    app: obma144
+  ports:
+    - port: 8001
+      targetPort: 8001
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: obma144-webservices
+  labels:
+    app: obma144
+spec:
+  selector:
+    app: obma144
+  ports:
+    - port: 8005
+      targetPort: 8005
+  type: LoadBalancer
