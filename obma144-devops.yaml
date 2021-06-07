@@ -161,8 +161,8 @@ spec:
   selector:
     app: obma144
   ports:
-    - port: 8004
-      targetPort: 8004
+    - port: 8003
+      targetPort: 8003
   type: LoadBalancer
 ---
 apiVersion: v1
