@@ -94,6 +94,8 @@ Now, you need to configure the Listen Address:
     4. Select Configuration and Node Manager
     5. Put "obma.oracle.com" in the Listen Address 
     6. Save the configuration and Apply the update
+    
+    PS: You can modify config.xml in MACHINE tag. The config.xml in this project is already modified for this purpose
 
 ![obma-machine-listen-address.png](https://github.com/hoshikawa2/repo-image/blob/master/obma-machine-listen-address.png?raw=true)
 
