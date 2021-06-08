@@ -291,7 +291,7 @@
     <name>OBMA_MC</name>
     <node-manager>
       <nm-type>SSL</nm-type>
-      <listen-address>localhost</listen-address>
+      <listen-address>obma.oracle.com</listen-address>
       <listen-port>5556</listen-port>
       <debug-enabled>false</debug-enabled>
     </node-manager>
