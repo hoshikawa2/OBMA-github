@@ -505,6 +505,10 @@ These scripts start the Weblogic Admin, Node Manager and the application (OBMA) 
     print("*** Connected *****")
     
     start('config_server')
+    
+    stopApplication('plato-discovery-service-5.3.0')
+    startApplication('plato-discovery-service-5.3.0')
+    
     start('ac_server')
     start('cs_server')
     start('ic_server')
