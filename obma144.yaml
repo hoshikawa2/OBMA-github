@@ -136,11 +136,11 @@ spec:
           failureThreshold: 3
         resources:
           requests:
-            cpu: "2"
-            memory: "10Gi"
+            cpu: "3"
+            memory: "20Gi"
           limits:
-            cpu: "2"
-            memory: "10Gi"
+            cpu: "3"
+            memory: "20Gi"
       restartPolicy: Always
       imagePullSecrets:
       # enter the name of the secret you created
